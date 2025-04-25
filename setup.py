@@ -5,15 +5,15 @@ from os import path, walk
 import sys
 from setuptools import setup, find_packages
 
-NAME = "Orange3 Example Add-on"
+NAME = "Visualize 3D Add-on"
 
-VERSION = "0.0.3"
+VERSION = "0.0.1"
 
-AUTHOR = 'Bioinformatics Laboratory, FRI UL'
-AUTHOR_EMAIL = 'contact@orange.biolab.si'
+AUTHOR = 'Lee Butler'
+AUTHOR_EMAIL = 'iraytrace@gmail.com'
 
 URL = 'http://orange.biolab.si/download'
-DESCRIPTION = "Add-on containing example widgets"
+DESCRIPTION = "Add-on for 3D visuals"
 LONG_DESCRIPTION = open(path.join(path.dirname(__file__), 'README.pypi'),
                         'r', encoding='utf-8').read()
 
@@ -28,8 +28,8 @@ KEYWORDS = (
 PACKAGES = find_packages()
 
 PACKAGE_DATA = {
-    'orangecontrib.example': ['tutorials/*.ows'],
-    'orangecontrib.example.widgets': ['icons/*'],
+    'orangecontrib.vis3d': ['tutorials/*.ows'],
+    'orangecontrib.vis3d.widgets': ['icons/*'],
 }
 
 DATA_FILES = [
@@ -44,13 +44,13 @@ ENTRY_POINTS = {
     # Entry points that marks this package as an orange add-on. If set, addon will
     # be shown in the add-ons manager even if not published on PyPi.
     'orange3.addon': (
-        'example = orangecontrib.example',
+        'example = orangecontrib.vis3d',
     ),
     # Entry point used to specify packages containing tutorials accessible
     # from welcome screen. Tutorials are saved Orange Workflows (.ows files).
     'orange.widgets.tutorials': (
         # Syntax: any_text = path.to.package.containing.tutorials
-        'exampletutorials = orangecontrib.example.tutorials',
+        'exampletutorials = orangecontrib.vis3d.tutorials',
     ),
 
     # Entry point used to specify packages containing widgets.
@@ -58,17 +58,17 @@ ENTRY_POINTS = {
         # Syntax: category name = path.to.package.containing.widgets
         # Widget category specification can be seen in
         #    orangecontrib/example/widgets/__init__.py
-        'Examples = orangecontrib.example.widgets',
+        'Examples = orangecontrib.vis3d.widgets',
     ),
 
     # Register widget help
     "orange.canvas.help": (
-        'html-index = orangecontrib.example.widgets:WIDGET_HELP_PATH',)
+        'html-index = orangecontrib.vis3d.widgets:WIDGET_HELP_PATH',)
 }
 
 NAMESPACE_PACKAGES = ["orangecontrib"]
 
-TEST_SUITE = "orangecontrib.example.tests.suite"
+TEST_SUITE = "orangecontrib.vis3d.tests.suite"
 
 
 def include_documentation(local_dir, install_dir):
