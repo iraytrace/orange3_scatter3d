@@ -1,7 +1,7 @@
 from Orange.widgets.widget import OWWidget, Input, Output, Msg
 from Orange.widgets.settings import Setting
 from Orange.widgets import gui
-from Orange.data import Table, DiscreteVariable
+from Orange.data import Table, DiscreteVariable, ContinuousVariable
 from AnyQt.QtWidgets import QLabel, QComboBox, QPushButton, QFileDialog, QSpacerItem, QSizePolicy
 from AnyQt.QtWebEngineWidgets import QWebEngineView
 import plotly.graph_objects as go
@@ -45,6 +45,7 @@ class Scatter3dWidget(OWWidget):
     selected_z = Setting("")
     selected_color = Setting("")
     selected_aspectmode = Setting("cube")
+    selected_size = Setting("")
     
     class Inputs:
         # specify the name of the input and the type
@@ -154,7 +155,7 @@ class Scatter3dWidget(OWWidget):
         if not self.data:
             return
 
-        from Orange.data import DiscreteVariable
+        
 
         # List of (combo_widget, list_of_items, previously_selected_value)
         combos = [
@@ -179,6 +180,12 @@ class Scatter3dWidget(OWWidget):
                 self.color_combo,
                 [""] + [var.name for var in self.data.domain.attributes ],
                 self.selected_color
+            ),
+            (
+                  self.size_combo,
+                  [""] + [var.name for var in self.data.domain.attributes
+                      if isinstance(var, ContinuousVariable)],
+                 self.selected_size
             ),
             # Aspectmode choices
             (
@@ -212,6 +219,7 @@ class Scatter3dWidget(OWWidget):
             z_name       = self.z_combo.currentText()
             color_name   = self.color_combo.currentText()
             aspectmode   = self.aspectmode_combo.currentText()
+            size_name    = self.size_combo.currentText()
     
             if not x_name or not y_name or not z_name:
                 return
@@ -220,9 +228,15 @@ class Scatter3dWidget(OWWidget):
             x = self.data.get_column(x_name)
             y = self.data.get_column(y_name)
             z = self.data.get_column(z_name)
+
+            hovertext   = None
     
             marker_args = {"size": 4}
-            hovertext   = None
+            if size_name:
+                sizes = self.data.get_column(size_name)
+                scaled = 5 + (sizes - sizes.min()) / (sizes.ptp() or 1) * 15
+                marker_args["size"] = scaled
+
     
             # Handle color‐by
             if color_name:
@@ -240,7 +254,6 @@ class Scatter3dWidget(OWWidget):
                     marker_args["color"]      = col
                     marker_args["colorscale"] = "Viridis"
                     marker_args["colorbar"]   = {"title": color_name}
-    
     
     
             # 1) Draw the main cloud
@@ -295,6 +308,7 @@ class Scatter3dWidget(OWWidget):
         self.y_combo = QComboBox()
         self.z_combo = QComboBox()
         self.color_combo = QComboBox()
+        self.size_combo = QComboBox()
         self.aspectmode_combo = QComboBox()
 
         self.controlArea.layout().addWidget(QLabel("X Axis:"))
@@ -306,6 +320,14 @@ class Scatter3dWidget(OWWidget):
 
         self.controlArea.layout().addWidget(QLabel("Color by (categorical):"))
         self.controlArea.layout().addWidget(self.color_combo)
+
+        # Size‐by combo (continuous only)
+        self.controlArea.layout().addWidget(QLabel("Size by (numeric):"))
+        self.controlArea.layout().addWidget(self.size_combo)
+
+        self.size_combo.currentIndexChanged.connect(
+            lambda idx: self._on_sel("selected_size", self.size_combo)
+        )
 
 
         self.controlArea.layout().addWidget(QLabel("Aspect Mode:"))
@@ -319,6 +341,7 @@ class Scatter3dWidget(OWWidget):
             ("selected_y",       self.y_combo),
             ("selected_z",       self.z_combo),
             ("selected_color",   self.color_combo),
+            ("selected_size",    self.size_combo),
             ("selected_aspectmode", self.aspectmode_combo),
         ]:
             # partial will bind attr and combo; the index arg comes from the signal
@@ -337,6 +360,8 @@ class Scatter3dWidget(OWWidget):
 
         self.count_label = QLabel("Points: 0")
         self.controlArea.layout().addWidget(self.count_label)
+
+
 
         # Spacer to keep controls at top
         spacer = QSpacerItem(0, 0, QSizePolicy.Minimum, QSizePolicy.Expanding)
