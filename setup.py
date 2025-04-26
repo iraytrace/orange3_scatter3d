@@ -58,7 +58,7 @@ ENTRY_POINTS = {
         # Syntax: category name = path.to.package.containing.widgets
         # Widget category specification can be seen in
         #    orangecontrib/example/widgets/__init__.py
-        'Examples = orangecontrib.vis3d.widgets',
+        'Vis3D = orangecontrib.vis3d.widgets',
     ),
 
     # Register widget help
