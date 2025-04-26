@@ -7,9 +7,9 @@ from Orange.widgets.widget import OWWidget, Input, Output, Msg
 class MyWidget(OWWidget):
     # Widget needs a name, or it is considered an abstract widget
     # and not shown in the menu.
-    name = "Hello World"
-    description = "Tell me more about yourself."
-    icon = "icons/mywidget.svg"
+    name = "Scatter3d"
+    description = "3D scatter plot."
+    icon = "icons/scatter3d.svg"
     priority = 100  # where in the widget order it will appear
     keywords = ["widget", "data"]
     want_main_area = False
