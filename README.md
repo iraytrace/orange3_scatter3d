@@ -40,6 +40,14 @@ or
 
     python -m Orange.canvas
 
-The new widget appears in the toolbox bar under the section 
+The new widget appears in the toolbox bar under the section Vis3D
 
 ![screenshot](screenshot.png)
+
+You can select data columns to be X, Y, and Z coordinate values.  If there is a column that identifies different datasets, you can specify that with the "Color by" selection.  By default all markers are the same size.  You can specify a column to set the marker size.  The size data will be scaled to the range 5..20 pixels.
+
+The Aspect mode can be set to "Cube" to stretch / squeeze the data into a cube
+![cube aspect](AspectCube.png)
+
+or "data" to stretch /squeeze the plot volume to fit the data.
+![cube aspect](AspectData.png)
