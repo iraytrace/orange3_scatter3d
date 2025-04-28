@@ -2,12 +2,10 @@ Orange3 Example Add-on
 ======================
 
 This is an add-on for 
-[Orange3](http://orange.biolab.si) that implements a 3D scatter plot.
+[Orange3](http://orange.biolab.si) that implements a 3D scatter plot.  
 
+The add-on leverages the plotly library to accomplish plotting.
 
-Add-on can extend Orange either 
-in scripting or GUI part, or in both. We here focus on the GUI part and implement a simple (empty) widget,
-register it with Orange and add a new workflow with this widget to example tutorials.
 
 Installation
 ------------
