@@ -49,8 +49,8 @@ You can select data columns to be X, Y, and Z coordinate values.  If there is a 
 
 ![screenshot](screenshot.png)
 
-The Aspect mode can be set to "Cube" to stretch / squeeze the data into a cube
+The Aspect mode can be set to "Cube" to stretch / squeeze the data into a cube.
 ![cube aspect](AspectCube.png)
 
-or "data" to stretch /squeeze the plot volume to fit the data.
+Alternatively, setting Aspect Mode to "data" will stretch /squeeze the plot volume to fit the data.
 ![cube aspect](AspectData.png)
