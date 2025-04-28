@@ -83,7 +83,17 @@ class Scatter3dWidget(OWWidget):
     
     def send_report(self):
         # self.report_plot() includes visualizations in the report
-        self.report_caption(self.label)
+        x_name       = self.x_combo.currentText()
+        y_name       = self.y_combo.currentText()
+        z_name       = self.z_combo.currentText()
+        color_name   = self.color_combo.currentText()
+        aspectmode   = self.aspectmode_combo.currentText()
+        size_name    = self.size_combo.currentText()
+
+        msg = f'{x_name} {y_name} {z_name} {color_name} {aspectmode} {size_name}'
+        self.report_caption(msg)
+
+
 
     def _save_camera(self):
         if hasattr(self, "_last_camera"):
