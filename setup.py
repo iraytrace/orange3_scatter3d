@@ -12,7 +12,7 @@ VERSION = "0.0.1"
 AUTHOR = 'Lee Butler'
 AUTHOR_EMAIL = 'iraytrace@gmail.com'
 
-URL = 'http://orange.biolab.si/download'
+URL = 'https://github.com/iraytrace/orange3_scatter3d'
 DESCRIPTION = "Add-on for 3D visuals"
 LONG_DESCRIPTION = open(path.join(path.dirname(__file__), 'README.pypi'),
                         'r', encoding='utf-8').read()
