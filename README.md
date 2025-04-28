@@ -52,3 +52,5 @@ The Aspect mode can be set to "Cube" to stretch / squeeze the data into a cube.
 
 Alternatively, setting Aspect Mode to "data" will stretch /squeeze the plot volume to fit the data.
 ![cube aspect](AspectData.png)
+
+Plots can be saved either as interactive HTML or as static PNG using the buttons in the bottom left.

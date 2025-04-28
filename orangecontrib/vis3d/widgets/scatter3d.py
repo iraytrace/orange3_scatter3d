@@ -367,6 +367,14 @@ class Scatter3dWidget(OWWidget):
         spacer = QSpacerItem(0, 0, QSizePolicy.Minimum, QSizePolicy.Expanding)
         self.controlArea.layout().addItem(spacer)
 
+        # Export buttons
+        self.export_html_btn = QPushButton("Export as HTML")
+        self.export_png_btn = QPushButton("Export as PNG")
+        self.controlArea.layout().addWidget(self.export_html_btn)
+        self.controlArea.layout().addWidget(self.export_png_btn)
+        self.export_html_btn.clicked.connect(self.export_html)
+        self.export_png_btn.clicked.connect(self.export_png)
+
         # Plot display
         self.web = QWebEngineView(self)
 
@@ -383,6 +391,21 @@ class Scatter3dWidget(OWWidget):
         self.web.page().loadFinished.connect(self._attach_camera_listener)
 
         self.mainArea.layout().addWidget(self.web)
+        
+    def export_html(self):
+        if hasattr(self, "_last_figure"):
+            path, _ = QFileDialog.getSaveFileName(self, "Export as HTML", "", "HTML files (*.html)")
+            if path:
+                self._last_figure.write_html(path)
+
+    def export_png(self):
+        if hasattr(self, "_last_figure"):
+            path, _ = QFileDialog.getSaveFileName(self, "Export as PNG", "", "PNG files (*.png)")
+            if path:
+                try:
+                    pio.write_image(self._last_figure, path)
+                except Exception as e:
+                    self.error(f"Failed to export PNG: {e}")
 
 
 if __name__ == "__main__":
