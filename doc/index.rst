@@ -33,6 +33,7 @@ The location of the documentation is set using the "orange.canvas.help" entrypoi
 usually points to the constant WIDGET_HELP_PATH in the package containing widgets. The
 constant should list the possible locations of the master page (the one that links to
 all widgets). This example add-on includes three different locations:
+
   - Development documentation is available for developers that manually build documentation
     using sphinx
   - Locally installed documentation, which is available if the add-on was installed using
@@ -58,7 +59,7 @@ Widgets
 .. toctree::
    :maxdepth: 1
 
-   widgets/mywidget
+   widgets/scatter3d
 
 Indices and tables
 ==================
