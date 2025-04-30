@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "orange3-scatter3d"
+version = "0.0.1"
+description = "Add-on for 3D visuals"
+readme = { file = "README.pypi", content-type = "text/markdown" }
+requires-python = ">=3.11"
+license = { text = "BSD" }
+authors = [
+  { name = "Lee Butler", email = "iraytrace@gmail.com" }
+]
+keywords = ["orange3 add-on"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3 :: Only"
+]
+dependencies = [
+  "Orange3"
+]
+
+[license]
+license = "BSD"
+license-files = ["LICENSE"]
+
+[project.urls]
+Homepage = "https://github.com/iraytrace/orange3_scatter3d"
+
+[project.optional-dependencies]
+# You can list extras here if any (e.g., docs, tests)
+
+[tool.setuptools]
+packages = ["orangecontrib.vis3d", "orangecontrib.vis3d.widgets", "orangecontrib.vis3d.tests"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+"orangecontrib.vis3d" = ["tutorials/*.ows"]
+"orangecontrib.vis3d.widgets" = ["icons/*"]
+
+[project.entry-points."orange3.addon"]
+example = "orangecontrib.vis3d"
+
+[project.entry-points."orange.widgets.tutorials"]
+exampletutorials = "orangecontrib.vis3d.tutorials"
+
+[project.entry-points."orange.widgets"]
+Vis3D = "orangecontrib.vis3d.widgets"
+
+[project.entry-points."orange.canvas.help"]
+html-index = "orangecontrib.vis3d.widgets:WIDGET_HELP_PATH"
+
+# Note: If you're using `python -m unittest`, you can also add this
+[tool.setuptools.dynamic]
+# You can define how to dynamically load things like long_description
+
+# Optional if needed for testing
+[tool.pytest.ini_options]
+# Add this only if using pytest, otherwise remove this section
+testpaths = ["orangecontrib/vis3d/tests"]
