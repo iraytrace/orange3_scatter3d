@@ -1,9 +1,72 @@
-<?xml version="1.0"?>
-<svg width="48" height="48" xmlns="http://www.w3.org/2000/svg">
- <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
- <title>Category Icon</title>
- <g>
-  <title>Layer 1</title>
-  <text transform="matrix(2.1520881448613944,0,0,1.827148799789029,-27.0810469525093,-19.479205367873945) " xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" id="svg_1" y="31.557737" x="24.102223" stroke-width="0" stroke="#000000" fill="#000000">X</text>
- </g>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="48"
+   height="48"
+   version="1.1"
+   id="svg2"
+   sodipodi:docname="category.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="16.3125"
+     inkscape:cx="17.256705"
+     inkscape:cy="24.888889"
+     inkscape:window-width="1350"
+     inkscape:window-height="1018"
+     inkscape:window-x="2392"
+     inkscape:window-y="20"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+  <title
+     id="title1">Category Icon</title>
+  <text
+     xml:space="preserve"
+     style="font-size:33.1613px;fill:#000000;stroke-width:1.24355;fill-opacity:1"
+     x="4.8306975"
+     y="32.523746"
+     id="text2"
+     transform="scale(0.86496656,1.1561141)"><tspan
+       sodipodi:role="line"
+       id="tspan2"
+       x="4.8306975"
+       y="32.523746"
+       style="stroke-width:1.24355;fill:#000000;fill-opacity:1">3D</tspan></text>
+  <path
+     style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+     d="m 7.1111111,14.896552 1.8390805,0.367816 c 0,0 2.3295014,-1.716475 4.0459774,-1.59387 1.716475,0.122605 3.555555,0.429119 3.984674,1.777777"
+     id="path2"
+     sodipodi:nodetypes="ccsc" />
+  <path
+     style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+     d="m 6.5173227,32.429119 2.1263555,-0.122606 c 0,0 2.1455938,1.348659 4.1072798,1.409962 1.961686,0.0613 3.494253,0.490421 3.862069,-0.980843"
+     id="path3"
+     sodipodi:nodetypes="ccsc" />
+  <path
+     style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+     d="m 13.352631,38.051435 c 3.204155,0 8.714001,-0.449458 9.084151,-7.424348 0.180345,-3.398326 -0.996282,-7.161127 -3.460427,-8.400628 -0.56162,0.0052 -2.523971,-0.01477 -3.31352,-0.0042 1.243672,0.03039 2.15438,-0.04397 3.31352,0.0042 1.444257,-1.284504 3.09261,-2.311176 2.908702,-6.042551 -0.128965,-2.616616 -2.813246,-6.3969421 -6.280186,-6.4582453"
+     id="path4"
+     sodipodi:nodetypes="cscccsc" />
+  <path
+     style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+     d="m 27.831417,33.187369 c 8.944093,0.182145 9.902436,-3.776567 9.808429,-10.014955 -0.07349,-4.87659 -1.274311,-8.651059 -9.808428,-8.651059"
+     id="path5"
+     sodipodi:nodetypes="csc" />
+  <path
+     style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+     d="M 25.072797,9.7697471 24,11.954023 V 36.10728 l 1.256705,1.493882"
+     id="path6" />
 </svg>
